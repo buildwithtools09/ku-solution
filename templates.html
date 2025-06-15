@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Templates - Kamal & Utkarsh</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;600;700&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #templates-hero {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+            background: linear-gradient(135deg, #1f2937, #374151); /* Darker, techy gradient */
+            color: #fff;
+            overflow: hidden;
+        }
+        .dark-mode #templates-hero {
+             background: linear-gradient(135deg, #111827, #1f2937);
+        }
+
+        #templates-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        #templates-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .templates-grid-placeholder {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .templates-grid-placeholder h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        .dark-mode .templates-grid-placeholder h2 {
+            color: #bbb;
+        }
+
+        .templates-grid-placeholder .coming-soon-text {
+            font-size: 1.5rem;
+            color: #777;
+            margin-bottom: 2rem;
+        }
+        .dark-mode .templates-grid-placeholder .coming-soon-text {
+            color: #999;
+        }
+
+        .templates-grid-placeholder .disabled-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 30px auto;
+            opacity: 0.5; /* Visually indicate disabled state */
+            pointer-events: none; /* Disable interactions */
+        }
+
+        .template-card-placeholder {
+            background-color: #e9ecef;
+            border: 2px dashed #ced4da;
+            border-radius: 8px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            color: #6c757d;
+        }
+        .dark-mode .template-card-placeholder {
+            background-color: #2a2a2a;
+            border-color: #444;
+            color: #888;
+        }
+
+        .templates-cta {
+            margin-top: 2rem;
+        }
+
+        .templates-cta .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: 2px solid #007bff;
+            padding: 0.8rem 1.8rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .dark-mode .templates-cta .btn-primary {
+            background-color: #36a4ff;
+            border-color: #36a4ff;
+            color: #121212;
+        }
+
+        .templates-cta .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .dark-mode .templates-cta .btn-primary:hover {
+            background-color: #1e90ff;
+            border-color: #1e90ff;
+        }
+
+        /* Placeholder for snake animation or motion background */
+        .templates-hero-animation-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind content */
+            /* Add canvas or CSS animation here */
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">KU Solutions</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="templates.html" class="active">Templates</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="templates-hero">
+            <div class="templates-hero-animation-bg" id="templatesAnimationCanvas"></div> <!-- Canvas for animation -->
+            <h1>Ready-Made Website Templates</h1>
+            <p>Discover our upcoming collection of modern, customizable, and SEO-optimized website templates designed to get you online fast.</p>
+            <div class="templates-cta">
+                <a href="https://www.fiverr.com/" target="_blank" class="btn-primary">Message Us on Fiverr to Discuss Template Needs</a>
+            </div>
+        </section>
+
+        <section class="templates-grid-placeholder">
+            <div class="container">
+                <h2>Our Template Collection</h2>
+                <p class="coming-soon-text">Exciting new templates are on their way! Check back soon.</p>
+                
+                <div class="disabled-grid">
+                    <div class="template-card-placeholder">Template Preview 1 (Coming Soon)</div>
+                    <div class="template-card-placeholder">Template Preview 2 (Coming Soon)</div>
+                    <div class="template-card-placeholder">Template Preview 3 (Coming Soon)</div>
+                    <div class="template-card-placeholder">Template Preview 4 (Coming Soon)</div>
+                    <div class="template-card-placeholder">Template Preview 5 (Coming Soon)</div>
+                    <div class="template-card-placeholder">Template Preview 6 (Coming Soon)</div>
+                </div>
+
+                <div class="templates-cta" style="margin-top: 40px;">
+                    <p>Can't find what you're looking for or need a custom template?</p>
+                    <a href="https://www.fiverr.com/" target="_blank" class="btn-primary">Contact Us on Fiverr</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Kamal & Utkarsh. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Basic Snake/Motion Animation for Templates Page Hero (Canvas Example)
+        const canvas = document.getElementById('templatesAnimationCanvas');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let width = canvas.offsetWidth;
+            let height = canvas.offsetHeight;
+            canvas.width = width;
+            canvas.height = height;
+
+            let particles = [];
+            const particleCount = 50;
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.size = Math.random() * 2 + 1;
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.speedY = Math.random() * 1 - 0.5;
+                    this.color = 'rgba(255, 255, 255, 0.3)';
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+
+                    if (this.size > 0.1) this.size -= 0.01;
+
+                    if (this.x < 0 || this.x > width) this.speedX *= -1;
+                    if (this.y < 0 || this.y > height) this.speedY *= -1;
+                }
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, width, height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                    if (particles[i].size <= 0.1) {
+                        particles.splice(i, 1);
+                        particles.push(new Particle());
+                        i--;
+                    }
+                }
+                requestAnimationFrame(animateParticles);
+            }
+            
+            window.addEventListener('resize', () => {
+                width = canvas.offsetWidth;
+                height = canvas.offsetHeight;
+                canvas.width = width;
+                canvas.height = height;
+                initParticles(); 
+            });
+
+            initParticles();
+            animateParticles();
+        } else {
+            console.log("Templates animation canvas not found.");
+        }
+    </script>
+    <script src="script.js"></script> <!-- General scripts -->
+</body>
+</html>

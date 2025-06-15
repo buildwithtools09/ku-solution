@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Kamal & Utkarsh</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;600;700&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #blog-hero {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f0f4f8; 
+        }
+        .dark-mode #blog-hero {
+            background-color: #232323;
+        }
+
+        .blog-posts-container {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .blog-post-item {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .dark-mode .blog-post-item {
+            background-color: #2c2c2c;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        }
+
+        .blog-post-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+        .dark-mode .blog-post-item:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+        }
+
+        .blog-post-item h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-post-item .post-meta {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 1rem;
+        }
+        .dark-mode .blog-post-item .post-meta {
+            color: #aaa;
+        }
+
+        .blog-post-item .post-excerpt {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post-item .read-more-btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .dark-mode .blog-post-item .read-more-btn {
+            background-color: #36a4ff;
+            color: #121212;
+        }
+
+        .blog-post-item .read-more-btn:hover {
+            background-color: #0056b3;
+        }
+        .dark-mode .blog-post-item .read-more-btn:hover {
+            background-color: #1e90ff;
+        }
+
+        .blog-placeholder-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #777;
+            padding: 40px 0;
+        }
+        .dark-mode .blog-placeholder-text {
+            color: #999;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">KU Solutions</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="templates.html">Templates</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="blog-hero">
+            <div class="container">
+                <h1>Our Blog</h1>
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">Insights, tips, and news on AI, web design, and development.</p>
+            </div>
+        </section>
+
+        <div class="blog-posts-container">
+            <!-- Placeholder for actual blog posts -->
+            <!-- If no posts, show a message -->
+            <p class="blog-placeholder-text">Our blog is coming soon! Stay tuned for insightful articles.</p>
+
+            <!-- Example Blog Post Item (to be dynamically generated or replaced) -->
+            <article class="blog-post-item" style="display:none;"> <!-- Hidden for now -->
+                <h2><a href="#">How AI is Changing Website Design</a></h2>
+                <p class="post-meta">Published on <time datetime="2024-07-28">July 28, 2024</time> by Kamal Hasan</p>
+                <p class="post-excerpt">Artificial Intelligence is no longer a futuristic concept but a present-day reality transforming various industries, and web design is no exception. From personalized user experiences to automated design processes, AI is reshaping how we create and interact with websites...</p>
+                <a href="#" class="read-more-btn">Read More →</a>
+            </article>
+
+            <article class="blog-post-item" style="display:none;"> <!-- Hidden for now -->
+                <h2><a href="#">Top UI/UX Tips for 2025</a></h2>
+                <p class="post-meta">Published on <time datetime="2024-08-05">August 05, 2024</time> by Utkarsh</p>
+                <p class="post-excerpt">As we approach 2025, the landscape of UI/UX design continues to evolve. Staying ahead of the curve is crucial for creating digital products that captivate and retain users. Here are some top UI/UX tips to keep in mind for the coming year...</p>
+                <a href="#" class="read-more-btn">Read More →</a>
+            </article>
+
+            <article class="blog-post-item" style="display:none;"> <!-- Hidden for now -->
+                <h2><a href="#">How We Build Fast & SEO-Optimized Websites with Trae.ai</a></h2>
+                <p class="post-meta">Published on <time datetime="2024-08-12">August 12, 2024</time> by Kamal & Utkarsh</p>
+                <p class="post-excerpt">In today's competitive digital world, a fast and SEO-optimized website is non-negotiable. At KU Solutions, we leverage powerful tools like Trae.ai to streamline our development process and deliver exceptional results. Here's a peek into our workflow...</p>
+                <a href="#" class="read-more-btn">Read More →</a>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Kamal & Utkarsh. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

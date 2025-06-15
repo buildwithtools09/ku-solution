@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Kamal & Utkarsh</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;600;700&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to portfolio.html */
+        #portfolio-page-hero {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f0f4f8; /* Light background for hero */
+        }
+        .dark-mode #portfolio-page-hero {
+            background-color: #232323;
+        }
+        #portfolio-filters {
+            text-align: center;
+            margin: 30px 0;
+        }
+        #portfolio-filters button {
+            background-color: #e9ecef;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dark-mode #portfolio-filters button {
+            background-color: #3a3a3a;
+            color: #f0f0f0;
+        }
+        #portfolio-filters button.active, 
+        #portfolio-filters button:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .dark-mode #portfolio-filters button.active, 
+        .dark-mode #portfolio-filters button:hover {
+            background-color: #36a4ff;
+            color: #121212;
+        }
+
+        .portfolio-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item-full {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex; /* Default: visible */
+            flex-direction: column;
+        }
+        .dark-mode .portfolio-item-full {
+            background-color: #2c2c2c;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .portfolio-item-full.hide {
+            display: none;
+        }
+
+        .portfolio-item-full:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .dark-mode .portfolio-item-full:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+
+        .portfolio-item-full img.item-thumbnail {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        .dark-mode .portfolio-item-full img.item-thumbnail {
+            border-bottom: 1px solid #444;
+        }
+
+        .portfolio-item-content {
+            padding: 20px;
+            flex-grow: 1; /* Allows content to fill space */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .portfolio-item-full h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item-full .item-type {
+            font-size: 0.9rem;
+            color: #007bff;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .dark-mode .portfolio-item-full .item-type {
+            color: #36a4ff;
+        }
+
+        .portfolio-item-full .item-description {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .portfolio-item-links {
+            margin-top: auto; /* Pushes links to the bottom */
+        }
+
+        .portfolio-item-links a {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: #6c757d;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 5px; /* For wrapping */
+        }
+        .dark-mode .portfolio-item-links a {
+            background-color: #5a5a5a;
+        }
+
+        .portfolio-item-links a:hover {
+            background-color: #545b62;
+        }
+        .dark-mode .portfolio-item-links a:hover {
+            background-color: #444;
+        }
+
+        .portfolio-item-links a.live-demo {
+            background-color: #007bff;
+        }
+        .dark-mode .portfolio-item-links a.live-demo {
+            background-color: #36a4ff;
+            color: #121212;
+        }
+        .portfolio-item-links a.live-demo:hover {
+            background-color: #0056b3;
+        }
+        .dark-mode .portfolio-item-links a.live-demo:hover {
+            background-color: #1e90ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">KU Solutions</a>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="templates.html">Templates</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="portfolio-page-hero">
+            <div class="container">
+                <h1>Our Work</h1>
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">Browse through a selection of projects we've proudly delivered.</p>
+            </div>
+        </section>
+
+        <section id="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ui-ux">UI/UX</button>
+            <button class="filter-btn" data-filter="landing-page">Landing Page</button>
+            <button class="filter-btn" data-filter="readme">README</button>
+            <button class="filter-btn" data-filter="web-dev">Web Development</button>
+            <button class="filter-btn" data-filter="saas">SaaS</button>
+            <button class="filter-btn" data-filter="templates">Templates</button>
+        </section>
+
+        <section class="portfolio-gallery">
+            <!-- Item 1: UI/UX -->
+            <div class="portfolio-item-full" data-category="ui-ux">
+                <img src="https://via.placeholder.com/600x400/A777E3/FFFFFF?text=Project+Alpha+UI" alt="Project Alpha UI/UX Design" class="item-thumbnail">
+                <div class="portfolio-item-content">
+                    <h3>Project Alpha</h3>
+                    <p class="item-type">UI/UX Design</p>
+                    <p class="item-description">A complete UI/UX overhaul for a mobile banking application, focusing on intuitive navigation and a modern aesthetic to enhance user engagement and satisfaction.</p>
+                    <div class="portfolio-item-links">
+                        <a href="#" target="_blank" class="live-demo">Live Demo (Figma)</a>
+                        <a href="#" target="_blank">Behance Case Study</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: Landing Page -->
+            <div class="portfolio-item-full" data-category="landing-page ai-landing-page">
+                <img src="https://via.placeholder.com/600x400/6E8EFB/FFFFFF?text=AI+Startup+LP" alt="AI Startup Landing Page" class="item-thumbnail">
+                <div class="portfolio-item-content">
+                    <h3>AI Startup Launch</h3>
+                    <p class="item-type">AI-Powered Landing Page</p>
+                    <p class="item-description">Developed a high-converting landing page for a new AI SaaS product, incorporating dynamic content and A/B tested calls-to-action to maximize sign-ups.</p>
+                    <div class="portfolio-item-links">
+                        <a href="#" target="_blank" class="live-demo">View Live Page</a>
+                        <a href="#" target="_blank">GitHub Repo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3: README -->
+            <div class="portfolio-item-full" data-category="readme">
+                <img src="https://via.placeholder.com/600x400/28A745/FFFFFF?text=OpenSource+README" alt="Open Source Project README" class="item-thumbnail">
+                <div class="portfolio-item-content">
+                    <h3>Open Source Library Docs</h3>
+                    <p class="item-type">Professional README</p>
+                    <p class="item-description">Crafted a comprehensive and user-friendly README for a popular open-source JavaScript library, significantly improving developer onboarding and contribution.</p>
+                    <div class="portfolio-item-links">
+                        <a href="#" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4: Web Development -->
+            <div class="portfolio-item-full" data-category="web-dev">
+                <img src="https://via.placeholder.com/600x400/FFC107/333333?text=E-commerce+Site" alt="E-commerce Platform" class="item-thumbnail">
+                <div class="portfolio-item-content">
+                    <h3>Artisan Goods E-shop</h3>
+                    <p class="item-type">Web Development</p>
+                    <p class="item-description">Built a full-featured e-commerce platform for an artisan goods retailer, including custom product pages, secure checkout, and inventory management.</p>
+                    <div class="portfolio-item-links">
+                        <a href="#" target="_blank" class="live-demo">Visit Shop</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5: SaaS -->
+            <div class="portfolio-item-full" data-category="saas ui-ux">
+                <img src="https://via.placeholder.com/600x400/DC3545/FFFFFF?text=Project+Zephyr+SaaS" alt="Project Zephyr SaaS UI" class="item-thumbnail">
+                <div class="portfolio-item-content">
+                    <h3>Project Zephyr</h3>
+                    <p class="item-type">SaaS UI/UX + No-Code</p>
+                    <p class="item-description">Designed and developed the MVP for a project management SaaS tool using Bubble.io, focusing on collaborative features and a clean user interface.</p>
+                    <div class="portfolio-item-links">
+                        <a href="#" target="_blank" class="live-demo">Explore MVP</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6: Template (Future) -->
+            <div class="portfolio-item-full" data-category="templates">
+                <img src="https://via.placeholder.com/600x400/17A2B8/FFFFFF?text=Modern+Portfolio+Template" alt="Modern Portfolio Template" class="item-thumbnail">
+                <div class="portfolio-item-content">
+                    <h3>Minimalist Portfolio Template</h3>
+                    <p class="item-type">Website Template</p>
+                    <p class="item-description">A sleek, modern, and fully customizable website template for creatives and freelancers. (Coming Soon)</p>
+                    <div class="portfolio-item-links">
+                        <a href="templates.html">Learn More</a>
+                    </div>
+                </div>
+            </div>
+             <!-- Add more portfolio items as needed -->
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Kamal & Utkarsh. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Portfolio Filter
+            const filterButtons = document.querySelectorAll('#portfolio-filters .filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-gallery .portfolio-item-full');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Manage active button state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    portfolioItems.forEach(item => {
+                        // Reset display before applying filter
+                        item.classList.remove('hide');
+                        item.style.display = 'flex'; // Or 'grid' or your default display type
+
+                        const itemCategories = item.getAttribute('data-category').split(' ');
+                        if (filter === 'all' || itemCategories.includes(filter)) {
+                            // No change, item is visible
+                        } else {
+                            item.style.display = 'none'; // Hide item
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script> <!-- General scripts -->
+</body>
+</html>
